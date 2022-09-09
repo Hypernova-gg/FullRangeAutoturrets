@@ -42,7 +42,7 @@ A few of the things you can do with this mod:
 
 ## Configuration
 
-This mod creates a configuration file in 
+This mod creates a configuration file in *./HarmonyMods_Data/FullRangeAutoturrets/Configuration.json*
 
 By default it'll look something like...
 ```json
