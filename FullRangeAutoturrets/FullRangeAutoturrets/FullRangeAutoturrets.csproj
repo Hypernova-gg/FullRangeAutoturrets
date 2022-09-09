@@ -1,0 +1,340 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <LangVersion>7.3</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\0Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Accessibility">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Accessibility.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
+      <Reference Include="CurvedTextMeshPro">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\CurvedTextMeshPro.dll</HintPath>
+      </Reference>
+      <Reference Include="DelaunayER">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\DelaunayER.dll</HintPath>
+      </Reference>
+      <Reference Include="EasyAntiCheat.Client">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\EasyAntiCheat.Client.dll</HintPath>
+      </Reference>
+      <Reference Include="EasyAntiCheat.Server">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\EasyAntiCheat.Server.dll</HintPath>
+      </Reference>
+      <Reference Include="EasyRoads3Dv3">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\EasyRoads3Dv3.dll</HintPath>
+      </Reference>
+      <Reference Include="EZhex1991.EZSoftBone">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\EZhex1991.EZSoftBone.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.BurstCloth">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.BurstCloth.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Console">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Console.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.GoogleSheets">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.GoogleSheets.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Input">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Input.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Network">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Network.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Raknet">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Raknet.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Rcon">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Rcon.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Skeleton">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Skeleton.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Sqlite">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Sqlite.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.SteamNetworking">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.SteamNetworking.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Steamworks.Win64">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Steamworks.Win64.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.System">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.System.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Unity">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.Unity.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.UnityEngine">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Facepunch.UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="Fleck">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Fleck.dll</HintPath>
+      </Reference>
+      <Reference Include="GA">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\GA.dll</HintPath>
+      </Reference>
+      <Reference Include="Ionic.Zip.Reduced">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Ionic.Zip.Reduced.dll</HintPath>
+      </Reference>
+      <Reference Include="LZ4">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\LZ4.dll</HintPath>
+      </Reference>
+      <Reference Include="LZ4pn">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\LZ4pn.dll</HintPath>
+      </Reference>
+      <Reference Include="NewAssembly">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\NewAssembly.dll</HintPath>
+      </Reference>
+      <Reference Include="Newtonsoft.Json">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Newtonsoft.Json.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Data">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Data.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Demo">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Demo.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Global">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Global.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Harmony">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Localization">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Localization.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Platform">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Platform.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Platform.Common">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Platform.Common.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Platform.Steam">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Platform.Steam.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.UI">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Workshop">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.Workshop.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.World">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Rust.World.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Buffers">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\System.Buffers.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Memory">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\System.Memory.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Numerics.Vectors">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\System.Numerics.Vectors.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Runtime.CompilerServices.Unsafe">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Mathematics">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Unity.Mathematics.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.TextMeshPro">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\Unity.TextMeshPro.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AccessibilityModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.AccessibilityModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AIModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.AIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AndroidJNIModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.AndroidJNIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AnimationModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.AnimationModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ARModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ARModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AssetBundleModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.AssetBundleModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AudioModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.AudioModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ClothModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ClothModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ClusterInputModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ClusterInputModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ClusterRendererModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ClusterRendererModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CrashReportingModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.CrashReportingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.DirectorModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.DirectorModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.DSPGraphModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.DSPGraphModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.GameCenterModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.GameCenterModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.GridModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.GridModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.HotReloadModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.HotReloadModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ImageConversionModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ImageConversionModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.IMGUIModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.IMGUIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.InputLegacyModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.InputLegacyModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.InputModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.InputModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.JSONSerializeModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.JSONSerializeModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.LocalizationModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.LocalizationModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ParticleSystemModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ParticleSystemModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PerformanceReportingModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.Physics2DModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.Physics2DModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PhysicsModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.PhysicsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ProfilerModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ProfilerModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ScreenCaptureModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SharedInternalsModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.SharedInternalsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SpriteMaskModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.SpriteMaskModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SpriteShapeModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.SpriteShapeModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.StreamingModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.StreamingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SubstanceModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.SubstanceModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SubsystemsModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.SubsystemsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TerrainModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.TerrainModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TerrainPhysicsModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TextCoreModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.TextCoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TextRenderingModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.TextRenderingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TilemapModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.TilemapModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TLSModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.TLSModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIElementsModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UIElementsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UmbraModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UmbraModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UNETModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UNETModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityAnalyticsModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityConnectModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityConnectModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityTestProtocolModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VehiclesModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.VehiclesModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VFXModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.VFXModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VideoModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.VideoModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VRModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.VRModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.WindModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.WindModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.XRModule">
+        <HintPath>C:\Users\Airathias\RiderProjects\HypernovaHarmonyMods\TurretModifier\bin\Debug\net48\UnityEngine.XRModule.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
