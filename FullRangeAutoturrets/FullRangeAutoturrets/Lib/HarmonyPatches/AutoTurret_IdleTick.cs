@@ -12,10 +12,13 @@ namespace FullRangeAutoturrets.HarmonyPatches
     public class AutoTurret_IdleTick
     {
         /// <summary>
-        /// Prepare the plugin's datasource for use
+        /// Prepare the plugin's datasource for use and check if the plugin is enabled.
         /// </summary>
-        [HarmonyPrepare]
-        public static void Prepare() => Main.CheckBootAndInit();
+        public static bool Prepare()
+        {
+            Main.CheckBootAndInit();
+            return (bool)Main.instance.Config.Get("Enabled") && (bool)Main.instance.Config.Get("AutoTurrets.Enabled");
+        }
         
         /// <summary>
         /// Patch the AutoTurret.IdleTick method to customize turret animation behavior
@@ -24,13 +27,6 @@ namespace FullRangeAutoturrets.HarmonyPatches
         /// <returns>A bool to indicate whether or not the original code should execute after our modifications</returns>
         static bool Prefix(AutoTurret __instance)
         {
-            // check if mod is enabled in config
-            if (!(bool)Main.instance.Config.Get("Enabled") || !(bool)Main.instance.Config.Get("AutoTurrets.Enabled"))
-            {
-                // Mod is disabled in config, skipping patch
-                return true;
-            }  
-            
             // Fetch the turret's next idle tick timer using reflection due to the property being private
             float nextIdleAimTime = Helpers.GetFieldValue<float>(__instance, "nextIdleAimTime");
             if (nextIdleAimTime < 10f)

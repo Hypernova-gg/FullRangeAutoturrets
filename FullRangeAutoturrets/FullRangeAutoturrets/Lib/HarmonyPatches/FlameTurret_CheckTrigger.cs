@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Reflection.Emit;
+using FullRangeAutoturrets.Lib;
 using FullRangeAutoturrets.Lib.Logging;
 using Harmony;
-using HarmonyTests.Lib;
 using UnityEngine;
 
 namespace FullRangeAutoturrets.HarmonyPatches
@@ -13,11 +14,13 @@ namespace FullRangeAutoturrets.HarmonyPatches
     public class FlameTurret_CheckTrigger_Patch
     {
         /// <summary>
-        /// Prepare the plugin's datasource for use. This is called before the first patch is applied, and before the game is loaded.
-        /// This was a cheeky way to get the plugin's datasource into the harmony patch since transpilers are usually executed before the plugin is loaded.
+        /// Prepare the plugin's datasource for use and check if the plugin is enabled.
         /// </summary>
-        [HarmonyPrepare]
-        public static void Prepare() => Main.CheckBootAndInit();
+        public static bool Prepare(MethodBase original)
+        {
+            Main.CheckBootAndInit();
+            return (bool)Main.instance.Config.Get("Enabled") && (bool)Main.instance.Config.Get("FlameTurrets.Enabled");
+        }
         
         /// <summary>
         /// Modifies the original code instructions to modify the turret's range.
@@ -25,44 +28,50 @@ namespace FullRangeAutoturrets.HarmonyPatches
         /// <param name="originalInstructions">Original code instructions to meddle with</param>
         /// <returns>Possibly modified code instructions to replace the original method's instructions</returns>
         [HarmonyTranspiler]
-        private static IEnumerable<CodeInstruction> Transpile(IEnumerable<CodeInstruction> originalInstructions)
+        private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> originalInstructions)
         {
             // Unfortunately, the FlameTurret's implementation of a detection range isn't as neat as an autoturret's.
-            // We have to manipulate an IF statement within its' AI think tick method.
+            // We'll override the default flag's falsification to instead execute our own helper function that will 
+            // implement our own detection algorithm and return TRUE to indicate that the turret should fire and FALSE
+            // to continue default behavior.
             
             // check if mod is enabled in config
             List<CodeInstruction> codeInstructionList = new List<CodeInstruction>(originalInstructions);
 
             try
             {
-                if (!Main.instance.isLoaded || !(bool)Main.instance.Config?.Get("Enabled") ||
-                    !(bool)Main.instance.Config?.Get("FlameTurrets.Enabled"))
-                {
-                    return codeInstructionList;
-                }
+                int flagDefinitionIndex = codeInstructionList.FindIndex(
+                    (Predicate<CodeInstruction>)(x => x.opcode == OpCodes.Stloc_2)); // There are multiple but we want the first one.
 
-                float detectionRange =
-                    Mathf.Clamp((float)Main.instance.Config.Get("FlameTurrets.DetectRange"), 0f, 360f);
+                if (flagDefinitionIndex != -1)
+                {
+                    if (codeInstructionList[flagDefinitionIndex - 1].opcode == OpCodes.Ldc_I4_0) // ... And we check if the definition is false anyway, so
+                    {
+                        FieldInfo field = typeof (SingletonComponent<FlameTurretAIBrain>).GetField("Instance", BindingFlags.Static | BindingFlags.Public);
+                        MethodInfo method = typeof (FlameTurretAIBrain).GetMethod("EvalTargetsInRange", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                        
+                        // The original code is: "var flag = false;". We want to replace it with a call to our helper function.
+                        codeInstructionList[flagDefinitionIndex - 1].opcode = OpCodes.Nop; // We first disable the falsification.
+                        
+                        // Then we insert 3 new instructions to call our helper function:
+                        // 1. Load the instance of the singleton component.
+                        // 2. Pass "this" to the function as the first argument (you do this by appending the ldarg.0 without operand)
+                        // 3. Call the function and append the result to the evaluation stack (the "virt" part of Callvirt)
+                        codeInstructionList.InsertRange(flagDefinitionIndex - 1, (IEnumerable<CodeInstruction>) new CodeInstruction[3]
+                        {
+                            new CodeInstruction(OpCodes.Ldsfld, (object) field),
+                            new CodeInstruction(OpCodes.Ldarg_0),
+                            new CodeInstruction(OpCodes.Callvirt, (object) method)
+                        });
+                    }
+                }
                 
-                // The original method detects a player within 0.5 degrees of the turret's forward vector, so we need to
-                // change the 0.5f to our new detection range.
-                int index1 = codeInstructionList.FindIndex(
-                    (Predicate<CodeInstruction>)(x => x.opcode == OpCodes.Ldc_R4 && (float)x.operand == 0.5f));
-
-                if (index1 == -1)
-                {
-                    LoggingManager.Log($"Unable to find location in source code to patch. Aborting patch.");
-                    return (IEnumerable<CodeInstruction>)codeInstructionList;
-                }
-                    
-                codeInstructionList[index1].operand =
-                    (float)detectionRange; // Modify the value of the Ldc_R4 instruction
             }
             catch (Exception e)
             {
                 LoggingManager.Log($"Unable to patch FlameTurret detection range: {e.Message}");
             }
-
+            
             return (IEnumerable<CodeInstruction>)codeInstructionList;
         }
     }

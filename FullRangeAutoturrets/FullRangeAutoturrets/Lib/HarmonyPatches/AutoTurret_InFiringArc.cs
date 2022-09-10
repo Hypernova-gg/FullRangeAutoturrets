@@ -1,4 +1,5 @@
-﻿using FullRangeAutoturrets.Lib.Logging;
+﻿using System.Reflection;
+using FullRangeAutoturrets.Lib.Logging;
 using Harmony;
 using UnityEngine;
 
@@ -8,10 +9,13 @@ namespace FullRangeAutoturrets.HarmonyPatches
     public class AutoTurret_InFiringArc
     {
         /// <summary>
-        /// Prepare the plugin's datasource for use
+        /// Prepare the plugin's datasource for use and check if the plugin is enabled.
         /// </summary>
-        [HarmonyPrepare]
-        public static void Prepare() => Main.CheckBootAndInit();
+        public static bool Prepare()
+        {
+            Main.CheckBootAndInit();
+            return (bool)Main.instance.Config.Get("Enabled") && (bool)Main.instance.Config.Get("AutoTurrets.Enabled");
+        }
         
         /// <summary>
         /// Patch the AutoTurret.InFiringArc method to allow turrets to detect targets outside of their normal firing arc (or even block it)
@@ -22,12 +26,6 @@ namespace FullRangeAutoturrets.HarmonyPatches
         /// <returns>A bool to indicate whether or not the original code should execute after our modifications</returns>
         static bool Prefix(ref bool __result, ref AutoTurret __instance, BaseCombatEntity potentialtarget)
         {
-            // check if mod is enabled in config
-            if (!(bool)Main.instance.Config.Get("Enabled") || !(bool)Main.instance.Config.Get("AutoTurrets.Enabled"))
-            {
-                return true;
-            }
-            
             float detectRange =
                 Mathf.Clamp((float)Main.instance.Config.Get("AutoTurrets.DetectRange"), 0f, 360f);
 

@@ -10,10 +10,13 @@ namespace FullRangeAutoturrets.HarmonyPatches
     public class FlameTurret_MovementUpdate
     {
         /// <summary>
-        /// Prepare the plugin's datasource for use
+        /// Prepare the plugin's datasource for use and check if the plugin is enabled.
         /// </summary>
-        [HarmonyPrepare]
-        public static void Prepare() => Main.CheckBootAndInit();
+        public static bool Prepare()
+        {
+            Main.CheckBootAndInit();
+            return (bool)Main.instance.Config.Get("Enabled") && (bool)Main.instance.Config.Get("FlameTurrets.Enabled");
+        }
         
         /// <summary>
         /// Modifies the turret's physical movement to allow for a larger range of movement
@@ -23,12 +26,6 @@ namespace FullRangeAutoturrets.HarmonyPatches
         /// <returns>A bool to indicate whether or not the original code should execute after our modifications</returns>
         static bool Prefix(float delta, FlameTurret __instance)
         {
-            // check if mod is enabled in config
-            if (!(bool)Main.instance.Config.Get("Enabled") || !(bool)Main.instance.Config.Get("FlameTurrets.Enabled"))
-            {
-                return true;
-            }
-            
             float rotationRange =
                 Mathf.Clamp((float)Main.instance.Config.Get("FlameTurrets.RotationRange"), 0f, 360f);
 
