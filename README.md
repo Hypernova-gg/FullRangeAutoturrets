@@ -1,4 +1,4 @@
-<h1 align="center"> Full Range Autoturrets </h1> <br>
+<h1 align="center"> Full Range Autoturrets <sup>v2.0.0.0</sup> </h1> <br>
 <p align="center">
   <a href="https://gitpoint.co/">
     <img alt="FullRangeAutoturrets" title="FullRangeAutoturrets" src="https://hypernova.gg/game-data/rust/plugins/fullrangeautoturrets/header.png" width="1024">
@@ -15,6 +15,8 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Configuration](#configuration)
+- [Commands](#commands)
 - [Feedback](#feedback)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -66,6 +68,17 @@ This should all be pretty self-explanatory, but in case it's not...
 * **"Modify all FlameTurrets (true/false)"** => Enables or disables the modification of FlameTurrets (**all of them!**)
 * **"Detection Range Degrees (0-360)"** => Sets the *detection* range for a turret. This does **NOT** change the animation. If set to 0, disables the turret type.
 * **"Rotation Range Degrees (0-360)"** => Sets the *rotation* range for a turret. This does **NOT** change the detection behavior. If set to 0, disables animation. If set to 360, will cause the AutoTurret to randomly choose a direction, and will cause the flame turret to rotate in circles infinitely.
+
+## Commands
+
+There's only one command included in this mod so far, and that's the reloading of configuration. This is done by doing;
+```
+fullrangeautoturrets.reload
+```
+
+Changes will be propagated immediately. 
+
+**Note:** Due to the nature of the modification enabler booleans ("Modification enabled (true/false)", "Modify all ... (true/false)"), changing these will require a restart of the server. This is because the booleans indicate whether or not to change the source code, which can't change while the server is running. Changing the detection/range degrees and reloading should be fine, though.
 
 ## Feedback
 
