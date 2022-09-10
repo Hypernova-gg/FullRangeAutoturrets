@@ -1,8 +1,6 @@
 <h1 align="center"> Full Range Autoturrets <sup>v2.0.0.0</sup> </h1> <br>
 <p align="center">
-  <a href="https://gitpoint.co/">
-    <img alt="FullRangeAutoturrets" title="FullRangeAutoturrets" src="https://hypernova.gg/game-data/rust/plugins/fullrangeautoturrets/header.png" width="1024">
-  </a>
+  <img alt="FullRangeAutoturrets" title="FullRangeAutoturrets" src="https://hypernova.gg/game-data/rust/plugins/fullrangeautoturrets/header.png" width="1024">
 </p>
 
 <p align="center">
